@@ -378,67 +378,154 @@ box-shadow:
 }
 
 /* =========================
-   FLYWHEEL
+   GROWTH PIPELINE
    ========================= */
 
-.flywheel{
-
-position:relative;
-
-width:600px;
-height:600px;
-
-margin:auto;
-
-}
-
-.flywheel-center{
-
-position:absolute;
-
-top:50%;
-left:50%;
-
-transform:translate(-50%,-50%);
-
-width:180px;
-height:180px;
+.pipeline{
 
 display:flex;
 align-items:center;
 justify-content:center;
+flex-wrap:wrap;
+
+gap:18px;
+
+margin-top:80px;
+
+}
+
+.pipeline-step{
+
+width:180px;
+
+padding:24px;
+
+background:linear-gradient(
+180deg,
+var(--card),
+var(--card2)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.pipeline-step:hover{
+
+transform:translateY(-6px);
+
+border-color:rgba(0,174,239,.4);
+
+box-shadow:
+0 0 25px rgba(0,174,239,.15);
+
+}
+
+.step-icon{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+.pipeline-step h3{
+
+font-size:22px;
+
+margin-bottom:10px;
+
+}
+
+.pipeline-step p{
+
+font-size:14px;
+
+line-height:1.7;
+
+color:var(--muted);
+
+}
+
+.pipeline-arrow{
+
+font-size:32px;
+
+color:var(--accent);
+
+font-weight:700;
+
+}
+
+.pipeline-core{
+
+width:220px;
+height:220px;
 
 border-radius:50%;
 
-background:var(--accent);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 
-color:#02101d;
-
-font-weight:800;
-
-}
-
-.orbit{
-
-position:absolute;
-
-padding:12px 18px;
-
-background:var(--card);
-
-border-radius:999px;
+background:radial-gradient(
+circle,
+rgba(0,174,239,.18),
+rgba(0,174,239,.04)
+);
 
 border:1px solid rgba(0,174,239,.25);
 
+box-shadow:
+0 0 60px rgba(0,174,239,.18);
+
 }
 
-.orbit-1{top:0;left:50%;transform:translateX(-50%);}
-.orbit-2{top:25%;right:0;}
-.orbit-3{bottom:25%;right:0;}
-.orbit-4{bottom:0;left:50%;transform:translateX(-50%);}
-.orbit-5{bottom:25%;left:0;}
-.orbit-6{top:25%;left:0;}
+.pipeline-core img{
 
+width:120px;
+
+margin-bottom:10px;
+
+filter:
+drop-shadow(0 0 20px rgba(0,174,239,.3));
+
+}
+
+.pipeline-core span{
+
+font-size:14px;
+
+letter-spacing:2px;
+
+color:var(--accent);
+
+font-weight:700;
+
+}
+
+@media(max-width:1200px){
+
+.pipeline{
+
+flex-direction:column;
+
+}
+
+.pipeline-arrow{
+
+transform:rotate(90deg);
+
+}
+
+}
 /* =========================
    CTA
    ========================= */
