@@ -204,7 +204,7 @@ font-weight:700;
 
 .hero h1{
 
-font-size:clamp(48px,4vw,68px);
+font-size:clamp(54px,5vw,78px);
 
 line-height:.95;
 
@@ -318,7 +318,7 @@ font-weight:700;
 
 .section-header h2{
 
-font-size:48px;
+font-size:56px;
 
 margin-top:16px;
 
@@ -589,8 +589,8 @@ height:420px;
 
 position:relative;
 
-width:420px;
-height:420px;
+width:520px;
+height:520px;
 
 margin:auto;
 
