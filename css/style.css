@@ -381,24 +381,24 @@ box-shadow:
    GROWTH PIPELINE
    ========================= */
 
-.pipeline{
+.pipeline-grid{
 
-display:flex;
-align-items:center;
-justify-content:center;
-flex-wrap:wrap;
+display:grid;
 
-gap:18px;
+grid-template-columns:
+repeat(4,1fr);
 
-margin-top:80px;
+gap:30px;
+
+max-width:1200px;
+
+margin:70px auto 0;
 
 }
 
 .pipeline-step{
 
-width:180px;
-
-padding:24px;
+padding:35px 25px;
 
 background:linear-gradient(
 180deg,
@@ -408,111 +408,89 @@ var(--card2)
 
 border:1px solid rgba(255,255,255,.08);
 
-border-radius:20px;
+border-radius:24px;
 
 text-align:center;
 
 transition:.3s;
 
+min-height:260px;
+
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+
 }
 
 .pipeline-step:hover{
 
-transform:translateY(-6px);
+transform:translateY(-8px);
 
-border-color:rgba(0,174,239,.4);
+border-color:rgba(0,174,239,.35);
 
 box-shadow:
-0 0 25px rgba(0,174,239,.15);
+0 0 30px rgba(0,174,239,.15);
 
 }
 
 .step-icon{
 
-font-size:34px;
+font-size:36px;
 
-margin-bottom:15px;
+margin-bottom:20px;
 
 }
 
 .pipeline-step h3{
 
-font-size:22px;
+font-size:30px;
 
-margin-bottom:10px;
+margin-bottom:15px;
 
 }
 
 .pipeline-step p{
 
-font-size:14px;
+font-size:16px;
 
-line-height:1.7;
+line-height:1.8;
 
 color:var(--muted);
 
 }
 
-.pipeline-arrow{
+/* LOWER ROW */
 
-font-size:32px;
+.pipeline-step:nth-child(5){
 
-color:var(--accent);
-
-font-weight:700;
+grid-column:2;
 
 }
 
-.pipeline-core{
+.pipeline-step:nth-child(6){
 
-width:220px;
-height:220px;
-
-border-radius:50%;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-
-background:radial-gradient(
-circle,
-rgba(0,174,239,.18),
-rgba(0,174,239,.04)
-);
-
-border:1px solid rgba(0,174,239,.25);
-
-box-shadow:
-0 0 60px rgba(0,174,239,.18);
+grid-column:3;
 
 }
 
-.pipeline-core img{
+/* MOBILE */
 
-width:120px;
+@media(max-width:1024px){
 
-margin-bottom:10px;
+.pipeline-grid{
 
-filter:
-drop-shadow(0 0 20px rgba(0,174,239,.3));
-
-}
-
-.pipeline-core span{
-
-font-size:14px;
-
-letter-spacing:2px;
-
-color:var(--accent);
-
-font-weight:700;
+grid-template-columns:1fr;
 
 }
 
-@media(max-width:1200px){
+.pipeline-step:nth-child(5),
+.pipeline-step:nth-child(6){
 
+grid-column:auto;
+
+}
+
+}
 .pipeline{
 
 flex-direction:column;
